@@ -1,0 +1,105 @@
+{
+  "id": "whoop-api",
+  "version": "1.0.0",
+  "spec_version": "0.1.0",
+  "name": "Whoop API",
+  "description": "MCP server for interacting with the Whoop API to retrieve fitness and health data",
+  "authentication": {
+    "type": "oauth2",
+    "oauth2_auth_url": "https://api.prod.whoop.com/oauth/oauth2/auth",
+    "oauth2_token_url": "https://api.prod.whoop.com/oauth/oauth2/token"
+  },
+  "endpoints": [
+    {
+      "name": "getUserProfile",
+      "description": "Get user profile information",
+      "http_method": "GET",
+      "url": "/user",
+      "response_type": "application/json"
+    },
+    {
+      "name": "getRecovery",
+      "description": "Get recovery data for a specific date range",
+      "http_method": "GET",
+      "url": "/recovery",
+      "parameters": [
+        {
+          "name": "start",
+          "description": "Start date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "end",
+          "description": "End date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "response_type": "application/json"
+    },
+    {
+      "name": "getSleep",
+      "description": "Get sleep data for a specific date range",
+      "http_method": "GET",
+      "url": "/sleep",
+      "parameters": [
+        {
+          "name": "start",
+          "description": "Start date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "end",
+          "description": "End date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "response_type": "application/json"
+    },
+    {
+      "name": "getWorkout",
+      "description": "Get workout data for a specific date range",
+      "http_method": "GET",
+      "url": "/workout",
+      "parameters": [
+        {
+          "name": "start",
+          "description": "Start date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "end",
+          "description": "End date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "response_type": "application/json"
+    },
+    {
+      "name": "getCycle",
+      "description": "Get menstrual cycle data for a specific date range",
+      "http_method": "GET",
+      "url": "/cycle",
+      "parameters": [
+        {
+          "name": "start",
+          "description": "Start date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "end",
+          "description": "End date (YYYY-MM-DD)",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "response_type": "application/json"
+    }
+  ]
+}
